@@ -39,5 +39,4 @@ class FizzBuzzTest {
     void shouldConvertFifteenToFizzBuzz(int input) {
         assertThat(classToTest.convert(input)).isEqualTo("FizzBuzz");
     }
-
 }
