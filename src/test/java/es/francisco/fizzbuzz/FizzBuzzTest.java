@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class FizzBuzzTest {
+class FizzBuzzTest {
 
     private FizzBuzz classToTest;
 
@@ -18,13 +18,20 @@ public class FizzBuzzTest {
 
     @ParameterizedTest
     @CsvSource({"1,1", "2,2", "4,4", "7,7", "8,8", "13,13", "14,14"})
-    public void shouldConvertNumberToFizzBuzzString(int input, String expectedValue) {
+    void shouldConvertNumberToFizzBuzzString(int input, String expectedValue) {
         assertThat(classToTest.convert(input)).isEqualTo(expectedValue);
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {3, 6, 9, 12, 15})
-    public void convertThreeToFizz(int input) {
+    @ValueSource(ints = {3, 6, 9, 12})
+    void shouldConvertMultipleOfThreeToFizz(int input) {
         assertThat(classToTest.convert(input)).isEqualTo("Fizz");
     }
+
+    @ParameterizedTest
+    @ValueSource(ints = {5, 10})
+    void shouldConvertFiveToBuzz(int input) {
+        assertThat(classToTest.convert(input)).isEqualTo("Buzz");
+    }
+
 }
