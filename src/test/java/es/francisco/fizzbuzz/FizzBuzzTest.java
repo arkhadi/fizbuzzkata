@@ -29,9 +29,15 @@ class FizzBuzzTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {5, 10})
+    @ValueSource(ints = {5, 10, 20})
     void shouldConvertFiveToBuzz(int input) {
         assertThat(classToTest.convert(input)).isEqualTo("Buzz");
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {15, 30, 45})
+    void shouldConvertFifteenToFizzBuzz(int input) {
+        assertThat(classToTest.convert(input)).isEqualTo("FizzBuzz");
     }
 
 }

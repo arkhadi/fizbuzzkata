@@ -1,5 +1,7 @@
 **FizzBuzz TDD Kata**
 
+By https://katalyst.codurance.com/fizzbuzz
+
 Instructions\
 Write a function that takes positive integers and outputs their string representation.
 
